@@ -1,0 +1,39 @@
+package edu.monmouth.musicalInstrument;
+
+public class MusicalInstrumentConstants {
+
+	  public static final int MINIMUM_NUMBER_OF_KEYS_OR_STRINGS = 0;
+	    public static final int MAXIMUM_NUMBER_OF_KEYS_OR_STRINGS = 100;
+
+	  
+	    
+	    
+	    public static final String UNKNOWN_NAME = "unknownname";
+	    public static final String UNKNOWN_TYPE = "unknowntype";
+	    public static final String UNKNOWN_KEYS_OR_STRINGS = "unknownkeyorstrings";
+
+	    
+	    public static final int UNKNOWN_NUMBER_OF_KEYS_OR_STRINGS = -1;
+
+	   
+	    
+	    public static final double UNKNOWN_PRICE = -9.0; 
+	    public static final double DEFAULT_PRICE = 0.0;  
+
+	    
+	    
+	    public static final String TYPE_WOODWIND = "woodwind";
+	    public static final String TYPE_STRING = "string";
+	    public static final String TYPE_BRASS = "brass";
+	    public static final String TYPE_KEYBOARD = "keyboard";
+	    public static final String TYPE_PERCUSSION = "percussion";
+
+	  
+	    private MusicalInstrumentConstants() {
+	    	
+	    }
+	}
+	
+	
+	
+	
