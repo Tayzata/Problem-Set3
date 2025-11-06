@@ -1,0 +1,8 @@
+Most expensive (among instrument6-9): MusicalInstrument{name='cello', type='string', numberOfKeysOrStrings=4, price=2400.0}
+Woodwind instruments (among instrument6-9):
+MusicalInstrument{name='flute', type='woodwind', numberOfKeysOrStrings=16, price=350.0}
+MusicalInstrument{name='oboe', type='woodwind', numberOfKeysOrStrings=7, price=2100.0}
+Instruments (6-9) with keys/strings > 6:
+MusicalInstrument{name='flute', type='woodwind', numberOfKeysOrStrings=16, price=350.0}
+MusicalInstrument{name='xylophone', type='percussion', numberOfKeysOrStrings=9, price=880.0}
+MusicalInstrument{name='oboe', type='woodwind', numberOfKeysOrStrings=7, price=2100.0}
