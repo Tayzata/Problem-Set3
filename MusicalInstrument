@@ -1,0 +1,118 @@
+package edu.monmouth.musicalInstrument;
+
+public class MusicalInstrument {
+
+    private String name;
+
+	private String type;
+    private int numberOfKeysOrStrings;
+    private double price;
+
+    
+    public MusicalInstrument() {
+        this(
+            MusicalInstrumentConstants.UNKNOWN_NUMBER_OF_KEYS_OR_STRINGS,
+            MusicalInstrumentConstants.UNKNOWN_TYPE,
+            MusicalInstrumentConstants.UNKNOWN_NAME,
+            MusicalInstrumentConstants.DEFAULT_PRICE
+        );
+    }
+
+    
+    public MusicalInstrument(int numberOfKeysOrStrings, String type, String name) {
+        this(numberOfKeysOrStrings, type, name, MusicalInstrumentConstants.DEFAULT_PRICE);
+    }
+
+   
+    public MusicalInstrument(int numberOfKeysOrStrings, String type, String name, double price) {
+        setNumberOfKeysOrStrings(numberOfKeysOrStrings);
+        setType(type);
+        setName(name);
+        setPrice(price);
+    }
+
+   
+    public void setNumberOfKeysOrStrings(int numberOfKeysOrStrings) {
+        if ((numberOfKeysOrStrings >= MusicalInstrumentConstants.MINIMUM_NUMBER_OF_KEYS_OR_STRINGS
+                && numberOfKeysOrStrings <= MusicalInstrumentConstants.MAXIMUM_NUMBER_OF_KEYS_OR_STRINGS)
+                || numberOfKeysOrStrings == MusicalInstrumentConstants.UNKNOWN_NUMBER_OF_KEYS_OR_STRINGS) {
+            this.numberOfKeysOrStrings = numberOfKeysOrStrings;
+        } else {
+            this.numberOfKeysOrStrings = MusicalInstrumentConstants.UNKNOWN_NUMBER_OF_KEYS_OR_STRINGS;
+        }
+    }
+
+   
+    public void setName(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            this.name = MusicalInstrumentConstants.UNKNOWN_NAME;
+        } else {
+            this.name = name.trim().toLowerCase();
+        }
+    }
+
+   
+    public void setType(String type) {
+        if (type == null || type.trim().isEmpty()) {
+            this.type = MusicalInstrumentConstants.UNKNOWN_TYPE;
+            return;
+        }
+
+        String lower = type.trim().toLowerCase();
+
+        if (lower.equals(MusicalInstrumentConstants.TYPE_WOODWIND)
+                || lower.equals(MusicalInstrumentConstants.TYPE_STRING)
+                || lower.equals(MusicalInstrumentConstants.TYPE_BRASS)
+                || lower.equals(MusicalInstrumentConstants.TYPE_KEYBOARD)
+                || lower.equals(MusicalInstrumentConstants.TYPE_PERCUSSION)) {
+            this.type = lower;
+        } else {
+            this.type = MusicalInstrumentConstants.UNKNOWN_TYPE;
+        }
+    }
+
+   
+    public void setPrice(double price) {
+        if (price < 0) {
+            this.price = MusicalInstrumentConstants.UNKNOWN_PRICE;
+        } else {
+            this.price = price;
+        }
+    }
+
+  
+    public int getNumberOfKeysOrStrings() {
+        return numberOfKeysOrStrings;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+  
+    public void displayAttributes() {
+        System.out.println("Name: " + name);
+        System.out.println("Type: " + type);
+        System.out.println("Number of Keys/Strings: " + numberOfKeysOrStrings);
+        System.out.println("Price: " + price);
+        System.out.println("---------------------------------");
+    }
+
+    @Override
+    public String toString() {
+        return "MusicalInstrument{" +
+                "name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", numberOfKeysOrStrings=" + numberOfKeysOrStrings +
+                ", price=" + price +
+                '}';
+    }
+}
