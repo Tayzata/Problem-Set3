@@ -1,0 +1,74 @@
+package edu.monmouth.musicalInstrument;
+
+public class ProblemSet3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		MusicalInstrument instrument1 =
+                new MusicalInstrument();
+        instrument1.displayAttributes();
+
+        MusicalInstrument instrument2 =
+                new MusicalInstrument(12, "woodwind", "clarinet");
+        instrument2.displayAttributes();
+
+        MusicalInstrument instrument3 =
+                new MusicalInstrument(6, "string", "violin", 799.99);
+        instrument3.displayAttributes();
+
+        MusicalInstrument instrument4 =
+                new MusicalInstrument(88, "keyboard", "piano", 15000.00);
+        instrument4.displayAttributes();
+
+        MusicalInstrument instrument5 =
+                new MusicalInstrument(3, "brass", "tuba", 3500.00);
+        instrument5.displayAttributes();
+
+        
+        MusicalInstrument instrument6 =
+                new MusicalInstrument(16, "woodwind", "flute", 350.00);
+        instrument6.displayAttributes();
+
+        MusicalInstrument instrument7 =
+                new MusicalInstrument(4, "string", "cello", 2400.00);
+        instrument7.displayAttributes();
+
+        MusicalInstrument instrument8 =
+                new MusicalInstrument(9, "percussion", "xylophone", 880.00);
+        instrument8.displayAttributes();
+
+        MusicalInstrument instrument9 =
+                new MusicalInstrument(7, "woodwind", "oboe", 2100.00);
+        instrument9.displayAttributes();
+        
+        
+        
+        MusicalInstrument[] lastFour = {instrument6, instrument7, instrument8, instrument9};
+
+     
+        MusicalInstrument mostExpensive = lastFour[0];
+        for (int i = 1; i < lastFour.length; i++) {
+            if (lastFour[i].getPrice() > mostExpensive.getPrice()) {
+                mostExpensive = lastFour[i];
+            }
+        }
+        System.out.println("Most expensive (among instrument6-9): " + mostExpensive);
+
+
+        System.out.println("Woodwind instruments (among instrument6-9):");
+        for (MusicalInstrument mi : lastFour) {
+            if ("woodwind".equals(mi.getType())) {
+                System.out.println(mi);
+            }
+        }
+
+    
+        System.out.println("Instruments (6-9) with keys/strings > 6:");
+        for (MusicalInstrument mi : lastFour) {
+            if (mi.getNumberOfKeysOrStrings() > 6) {
+                System.out.println(mi);
+            }
+        }
+    }
+}
